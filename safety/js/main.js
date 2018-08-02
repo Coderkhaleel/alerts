@@ -184,9 +184,10 @@ function deniedPosition(error) {
 
 function sendAlert(){
 	$.ajax({
-  url: "https://slftyaplcg.execute-api.us-east-1.amazonaws.com/dev",
+  url: "https://slftyaplcg.execute-api.us-east-1.amazonaws.com/dev/alert",
   type: "GET",
   headers: {"request-type": "alert"},
+crossDomain: true,  
   success: function(res){
     alert('Alert Sent!')
 	console.log(res)
