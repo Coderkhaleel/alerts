@@ -183,12 +183,14 @@ function deniedPosition(error) {
 }
 
 function sendAlert(){
+	$('#loader').css('display','block')
 	$.ajax({
   url: "https://slftyaplcg.execute-api.us-east-1.amazonaws.com/dev/alert",
   type: "GET",
   headers: {"request-type": "alert"},
 crossDomain: true,  
   success: function(res){
+	$('#loader').css('display','none')
     alert('Alert Sent!')
 	console.log(res)
   }
